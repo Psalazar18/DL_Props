@@ -1,28 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+        <Formulario :listOfTasks="Datos" @addingTask="AgregarTareas" @eliminarTarea="deleteTask"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Formulario from './components/Formulario.vue'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      Datos: []
+    }
+  },
   components: {
-    HelloWorld
-  }
+    Formulario
+  },
+  methods: {
+    AgregarTareas(datos){
+      console.log(datos);
+      this.Datos.push(datos);
+    },
+    deleteTask(index){
+      this.Datos.splice(1,index)
+    }
+  },
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
