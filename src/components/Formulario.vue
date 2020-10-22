@@ -9,7 +9,7 @@
     </div>
     <div class="mx-5">
       <ul>
-        <li v-for="(data,index) in listOfTasks" :key="index">{{data}} 
+        <li class="my-3" v-for="(data,index) in listOfTasks" :key="index">{{data}} 
           <button class="bg-danger text-white" @click="eliminar(index)"><font-awesome-icon :icon="['fas', 'times']"/>
           </button> 
         </li>
