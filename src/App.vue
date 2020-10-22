@@ -23,7 +23,7 @@ export default {
       this.Datos.push(datos);
     },
     deleteTask(index){
-      this.Datos.splice(1,index)
+      this.Datos.splice(index,1)
     }
   },
 }
